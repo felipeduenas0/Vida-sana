@@ -1,36 +1,43 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Web\WelcomeController;
-use App\Http\Controllers\Web\OrderController;
+use App\Http\Controllers\Web\PagesController;
+use App\Http\Controllers\Web\NewsController;
 use App\Http\Controllers\Web\ProductController;
+use App\Http\Controllers\Web\OrderController;
 
-// Rutas para la página principal
-Route::get('/', [WelcomeController::class, 'index'])->name('start');
-Route::get('/about', [WelcomeController::class, 'about'])->name('about');
-Route::post('/sendMessage', [WelcomeController::class, 'sendMessage']);
+// Pages
+Route::get('/', [PagesController::class, 'start'])->name('start');
+Route::get('/about', [PagesController::class, 'about'])->name('about');
+Route::get('/news', [PagesController::class, 'news'])->name('news');
+Route::get('/shop', [PagesController::class, 'shop'])->name('shop');
+Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
 
-// Rutas de solicitud de ordenes
+// Blogs
+Route::get('/single-news', [NewsController::class, 'singleNews'])->name('single-news');
+Route::get('/fibras', [NewsController::class, 'fibras'])->name('fibras');
+Route::get('/pnaturales', [NewsController::class, 'pNaturales'])->name('pnaturales');
+Route::get('/desintox', [NewsController::class, 'desintox'])->name('desintox');
+
+// Rutas de gestión de productos
+Route::get('/admin', [ProductController::class, 'admin'])->name('admin');
+Route::get('/product/create', [ProductController::class, 'create']);
+Route::post('/product/store', [ProductController::class, 'store']);
+Route::get('/product/edit/{product}', [ProductController::class, 'edit']);
+Route::patch('/product/update/{product}', [ProductController::class, 'update']);
+Route::delete('/product/destroy/{product}', [ProductController::class, 'destroy']);
+
+
+
+/* Rutas pendientes
+
+// Rutas de solicitud de órdenes
 Route::get('/makeOrder/{category}', [OrderController::class, 'getMakeOrder'])->name('makeOrder');
 Route::get('/addProduct/{product}', [OrderController::class, 'addProduct']);
 Route::delete('/removeProduct', [OrderController::class, 'removeProduct']);
 Route::post('/finalizeOrder', [OrderController::class, 'finalizeOrder']);
 Route::post('/downloadReceipt', [OrderController::class, 'downloadReceipt']);
 
-/* Rutas de autenticación */
-Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
-Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
-Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
+Route::post('/sendMessage', [PagesController::class, 'sendMessage']);
 
-// Rutas de modulos internos de administrador
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// Rutas de gestión de productos
-Route::get('/product/management', [ProductController::class, 'index'])->name('product/management');
-Route::get('/product/create', [ProductController::class, 'create']);
-Route::post('/product/store', [ProductController::class, 'store']);
-Route::get('/product/edit/{product}', [ProductController::class, 'edit']);
-Route::patch('/product/update/{product}', [ProductController::class, 'update']);
-Route::delete('/product/destroy/{product}', [ProductController::class, 'destroy']);
+*/

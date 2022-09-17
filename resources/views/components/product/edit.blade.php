@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container border">
+    <div class="container border mb-5">
 
         <div class="col-11 col-md-6 mx-auto">
 

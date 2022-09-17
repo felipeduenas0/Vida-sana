@@ -1,4 +1,4 @@
-<h1 class="text-center mt-md-5" style="font-family: 'Arial Rounded MT Bold', sans-serif">
+<h1 class="text-center mt-md-5 font-weight-bolder" style="font-family: 'Arial Rounded MT Bold', sans-serif">
     {{$mod}} Producto
 </h1>
 
@@ -64,5 +64,5 @@
 
 <div class="mt-4 mb-5">
     <input type="submit" class="btn btn-success" value="{{$mod}} producto">
-    <a class="btn btn-primary" href="{{url('product/management')}}">Regresar</a>
+    <a class="btn btn-primary" href="{{url('admin')}}">Regresar</a>
 </div>

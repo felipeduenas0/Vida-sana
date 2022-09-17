@@ -11,12 +11,7 @@ use Illuminate\Support\Facades\Storage;
 class ProductController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    public function index()
+    public function admin()
     {
         $data['products'] = Product::all();
         return view('components.product.index', $data);
@@ -38,7 +33,7 @@ class ProductController extends Controller
         $product = new Product($data);
         $product->save();
 
-        return redirect('product/management')->with('message', 'Producto agregado correctamente');
+        return redirect('admin')->with('message', 'Producto agregado correctamente');
     }
 
     public function edit(Product $product)
@@ -58,7 +53,7 @@ class ProductController extends Controller
         $product->update($data);
         $product->save();
 
-        return redirect('product/management')->with('message', 'Producto actualizado correctamente');
+        return redirect('admin')->with('message', 'Producto actualizado correctamente');
     }
 
     public function destroy(Product $product)
@@ -67,7 +62,7 @@ class ProductController extends Controller
             $product->delete();
         }
 
-        return redirect('product/management')->with('message', 'Producto eliminado correctamente');
+        return redirect('admin')->with('message', 'Producto eliminado correctamente');
     }
 
 }

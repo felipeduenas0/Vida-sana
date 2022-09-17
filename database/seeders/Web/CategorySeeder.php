@@ -11,40 +11,22 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $categoryOne = new Category([
-            'name' => 'Chaquetas',
-            'description' => 'Prendas / Chaquetas y similares'
+            'name' => 'Salud',
+            'description' => 'Productos - Salud'
         ]);
         $categoryOne->save();
 
         $categoryTwo = new Category([
-            'name' => 'Busos',
-            'description' => 'Prendas / Busos y similares'
+            'name' => 'Deporte',
+            'description' => 'Productos - Deporte'
         ]);
         $categoryTwo->save();
 
         $categoryThree = new Category([
-            'name' => 'Camisas',
-            'description' => 'Prendas / Camisas y similares'
+            'name' => 'Alimentos',
+            'description' => 'Productos - Alimentos'
         ]);
         $categoryThree->save();
-
-        $categoryFour = new Category([
-            'name' => 'Pantalones',
-            'description' => 'Prendas / Pantalones y similares'
-        ]);
-        $categoryFour->save();
-
-        $categoryFive = new Category([
-            'name' => 'Gorros',
-            'description' => 'Prendas / Gorros y similares'
-        ]);
-        $categoryFive->save();
-
-        $categorySixth = new Category([
-            'name' => 'Accesorios',
-            'description' => 'Accesorios / Accesorios y similares'
-        ]);
-        $categorySixth->save();
     }
 
 }

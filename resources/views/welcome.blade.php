@@ -5,54 +5,86 @@
 <head>
 
     <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('favicon.png') }}">
 
     <!-- Title -->
-    <title>Y2K - Sogamoso</title>
+    <title>Inicio</title>
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="{{ asset('css/all.min.css') }} ">
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href='https://fonts.googleapis.com/css?family=Schoolbell' rel='stylesheet'>
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/globalStyles.css') }}" rel="stylesheet">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+    <!-- animate css -->
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+    <!-- mean menu css -->
+    <link rel="stylesheet" href="{{ asset('css/meanmenu.min.css') }}">
+    <!-- main style -->
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <!-- responsive -->
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
-    <!-- Style sections -->
-    @yield('startStyles')
-    @yield('makeOrderStyles')
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-@include('components.navbar')
+<!-- PRELOADER -->
+@include('components.template.preLoader')
 
-<!-- CONTENT -->
+<!-- HEADER -->
+@include('components.template.header')
+
+<!-- PAGES -->
 @yield('start')
-@yield('makeOrder')
+@yield('about')
+@yield('news')
+@yield('shop')
+
+<!-- BLOGS -->
+@yield('single-news')
+@yield('fibras')
+@yield('pnaturales')
+@yield('desintox')
 
 <!-- FOOTER -->
-@include('components.footer')
+@include('components.template.footer')
 
-<!-- Scripts -->
-<script src="{{asset('js/app.js')}}"></script>
-
-<!-- Script sections -->
-
-
-@yield('makeOrderScript')
+<!-- jquery -->
+<script src="{{ asset('js/jquery-1.11.3.min.js') }}"></script>
+<!-- bootstrap -->
+<script src="{{ assert('bootstrap/js/bootstrap.min.js') }}"></script>
+<!-- count down -->
+<script src="{{ asset('js/jquery.countdown.js') }}"></script>
+<!-- isotope -->
+<script src="{{ asset('js/jquery.isotope-3.0.6.min.js') }}"></script>
+<!-- waypoints -->
+<script src="{{ asset('js/waypoints.js') }}"></script>
+<!-- owl carousel -->
+<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+<!-- magnific popup -->
+<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+<!-- mean menu -->
+<script src="{{ asset('js/jquery.meanmenu.min.js') }}"></script>
+<!-- sticker js -->
+<script src="{{ asset('js/sticker.js') }}"></script>
+<!-- main js -->
+<script src="{{ asset('js/main.js') }}"></script>
 
 </body>
 

@@ -4,13 +4,15 @@
 
     <div class="container">
 
-        <h1 class="text-center mb-4" style="font-family: 'Arial Rounded MT Bold', sans-serif">Productos</h1>
+        <h2 class="text-center mb-4 font-weight-bolder" style="font-family: 'Arial Rounded MT Bold', sans-serif">Gestión de Productos</h2>
 
         @if(\Illuminate\Support\Facades\Session::has('message'))
-            <div class="alert alert-success alert-dismissible fade show">
+
+            <div class="alert alert-primary fade in alert-dismissible show">
                 {{\Illuminate\Support\Facades\Session::get('message')}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
+
         @endif
 
         <a href="{{url('product/create')}}" class="btn btn-success">Registrar nuevo producto</a>
@@ -47,7 +49,7 @@
 
                         <td>
                             <img class="img-thumbnail img-fluid" src="{{asset('storage').'/'.$product->image}}"
-                                 width="100" alt="image_product">
+                                 width="75" alt="image_product">
                         </td>
 
                         <td>{{$product->category->name}}</td>
