@@ -7,6 +7,7 @@ use App\Http\Controllers\Web\ProductController;
 
 // Rutas para la página principal
 Route::get('/', [WelcomeController::class, 'index'])->name('start');
+Route::get('/about', [WelcomeController::class, 'about'])->name('about');
 Route::post('/sendMessage', [WelcomeController::class, 'sendMessage']);
 
 // Rutas de solicitud de ordenes

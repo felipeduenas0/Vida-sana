@@ -1,29 +1,30 @@
 .custom-nabvar {
-    background-color: black;
+    background-color: rgb(246, 246, 246);
     z-index: 10;
 }
 
 .navbar-brand {
-    color: #ffffff;
+    color: #ff0000;
     font-size: 30px;
     font-family: "Arial Rounded MT Bold", sans-serif;
 }
 
 .navbar-brand:hover {
-    color: #ffffff;
+    color: #ff0000;
 }
 
 .nav-link {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.5);
     font-size: 18px;
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: white;
+    color: #000000;
 }
 
 .link-active, .link-active:hover {
-    color: white;
+    color: #000000;
+    font-weight: bolder;
 }
 
 .navbar-toggler {
@@ -31,7 +32,7 @@
 }
 
 .navbar-toggler i {
-    color: #ffffff;
+    color: #000000;
     font-size: 1.8rem;
     font-weight: bolder;
 }

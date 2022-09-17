@@ -24,4 +24,9 @@ class WelcomeController extends Controller
         return redirect()->route('start', '#contact')->with('message', 'Mensaje enviado correctamente');
     }
 
+    public function about()
+    {
+        return view('layouts.about');
+    }
+
 }

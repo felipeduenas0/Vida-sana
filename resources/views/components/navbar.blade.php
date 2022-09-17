@@ -3,7 +3,7 @@
     <div class="container">
 
         <a class="navbar-brand" href="/">
-            <img src="{{asset('images/logo.png')}}" alt="" height="40">
+            <h5 class="text-black"><span class="fs-2" style="color: #ff0000;">Y2K</span> ¡Al mejor estilo!</h5>
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
@@ -32,6 +32,12 @@
                     <a class="nav-link {{ request()->path() == '/#contact' ? 'link-active' : '' }}"
                        aria-current="page"
                        href="{{url('/#contact')}}" id="link-pedido">Contactanos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{request()->routeIs('about') ? 'link-active' : '' }}" aria-current="page"
+                       href="{{ url('/about') }}" id="link-pedido">Acerca de nosotros
+                    </a>
                 </li>
 
             </ul>
