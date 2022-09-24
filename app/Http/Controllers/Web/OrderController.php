@@ -3,19 +3,18 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class OrderController extends Controller
 {
 
-    public function getMakeOrder(Category $category)
+    public function cart()
     {
-        $products = $category->product()->get();
-        return view("components.makeOrder", ['products' => $products, 'total' => $this->getTotal()]);
+        return view('components.pages.cart', ['total' => $this->getTotal()]);
     }
 
     private function getTotal()
@@ -31,11 +30,12 @@ class OrderController extends Controller
 
     public function addProduct(Product $product): RedirectResponse
     {
-        $category = $product->getAttribute('category_id');
         $result = $this->validateStock($product);
 
         if (!$result) {
-            return redirect()->route('makeOrder', $category)->with('errorMessage', 'No hay más unidades de este producto');
+            /** @noinspection PhpUndefinedMethodInspection */
+            Alert::error('No hay más unidades de este producto');
+            return redirect()->route('cart');
         }
 
         return $this->addToTheList($product);
@@ -48,19 +48,20 @@ class OrderController extends Controller
 
     private function addToTheList(Product $product): RedirectResponse
     {
-        $category = $product->getAttribute('category_id');
         $listOfProducts = $this->getListProducts();
 
         foreach ($listOfProducts as $item) {
             if ($item->id == $product->getAttribute('id')) {
 
                 if (($item->stockAmount + 1) > $product->getAttribute('stockAmount')) {
-                    return redirect()->route('makeOrder', $category)->with('errorMessage', 'No hay más unidades de este producto');
+                    /** @noinspection PhpUndefinedMethodInspection */
+                    Alert::error('No hay más unidades de este producto');
+                    return redirect()->route('cart');
                 }
 
                 $item->stockAmount = ($item->stockAmount + 1);
 
-                return redirect()->route('makeOrder', $category);
+                return redirect()->route('cart');
             }
         }
 
@@ -70,7 +71,7 @@ class OrderController extends Controller
         array_push($listOfProducts, $product);
         $this->saveProducts($listOfProducts);
 
-        return redirect()->route('makeOrder', $category);
+        return redirect()->route('cart');
     }
 
     private function getListProducts()
@@ -94,16 +95,24 @@ class OrderController extends Controller
 
         if ($listOfProducts[$index]['stockAmount'] > 1) {
             $listOfProducts[$index]['stockAmount'] = ($listOfProducts[$index]['stockAmount'] - 1);
-            return redirect()->route('makeOrder', 1);
+            return redirect()->route('cart');
         }
 
         array_splice($listOfProducts, $index, 1);
         $this->saveProducts($listOfProducts);
-        return redirect()->route('makeOrder', 1);
+        return redirect()->route('cart');
     }
 
     public function finalizeOrder(): RedirectResponse
     {
+        $products = $this->getListProducts();
+
+        foreach ($products as $product) {
+            $updatedProduct = Product::all()->find($product->getAttribute('id'));
+            $updatedProduct->setAttribute('stockAmount', ($updatedProduct->getAttribute('stockAmount') - $product->getAttribute('stockAmount')));
+            $updatedProduct->save();
+        }
+
         session([
             'productsBill' => $this->getListProducts(),
             'totalBill' => $this->getTotal()
@@ -111,7 +120,7 @@ class OrderController extends Controller
 
         $this->emptyProductList();
 
-        return redirect()->route('makeOrder', 1);
+        return redirect()->route('cart');
     }
 
     private function emptyProductList()
@@ -122,8 +131,9 @@ class OrderController extends Controller
     public function downloadReceipt()
     {
         if (session('productsBill') == null || session('totalBill') == null) {
-
-            return redirect()->route('makeOrder', 1)->with('errorMessageBill', 'El recibo ya caduco...');
+            /** @noinspection PhpUndefinedMethodInspection */
+            Alert::error('El recibo ya ha caducado');
+            return redirect()->route('cart');
         }
 
         $pdf = Pdf::loadView('components.download.bill', [

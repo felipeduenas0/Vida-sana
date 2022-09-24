@@ -7,6 +7,7 @@ use App\Http\Requests\Product\ProductRequest;
 use App\Http\Requests\Product\ProductUpdateRequest;
 use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProductController extends Controller
 {
@@ -33,7 +34,9 @@ class ProductController extends Controller
         $product = new Product($data);
         $product->save();
 
-        return redirect('admin')->with('message', 'Producto agregado correctamente');
+        /** @noinspection PhpUndefinedMethodInspection */
+        Alert::success('Producto agregado correctamente');
+        return redirect('admin');
     }
 
     public function edit(Product $product)
@@ -53,7 +56,9 @@ class ProductController extends Controller
         $product->update($data);
         $product->save();
 
-        return redirect('admin')->with('message', 'Producto actualizado correctamente');
+        /** @noinspection PhpUndefinedMethodInspection */
+        Alert::success('Producto actualizado correctamente');
+        return redirect('admin');
     }
 
     public function destroy(Product $product)
@@ -62,7 +67,14 @@ class ProductController extends Controller
             $product->delete();
         }
 
-        return redirect('admin')->with('message', 'Producto eliminado correctamente');
+        /** @noinspection PhpUndefinedMethodInspection */
+        Alert::success('Producto eliminado correctamente');
+        return redirect('admin');
+    }
+
+    public function show(Product $product)
+    {
+        return view('components.pages.product', ['product' => $product]);
     }
 
 }

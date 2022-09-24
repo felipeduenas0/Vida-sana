@@ -42,16 +42,16 @@
                             <div class="col-lg-4 col-md-6 text-center strawberry">
                                 <div class="single-product-item">
                                     <div class="product-image">
-                                        <a href="producto2.html">
+                                        <a href="{{ url('/product/' . $product->id) }}">
                                             <img src="{{ asset('storage') .'/'. $product->image}}" alt="">
                                         </a>
                                     </div>
                                     <h3>{{$product->name}}</h3>
                                     <p class="product-price">
-                                        <span>{{$product->description}}</span>
-                                        {{$product->price}}
+                                        <span>{{$product->shortDescription}}</span>
+                                        $ {{number_format($product->price, 0, ',', '.')}}
                                     </p>
-                                    <a href="cart.html" class="cart-btn">
+                                    <a href="{{ url('/addProduct/'.$product->id) }}" class="cart-btn">
                                         <i class="fas fa-shopping-cart"></i>
                                         Añadir al carrito
                                     </a>
@@ -63,16 +63,16 @@
                             <div class="col-lg-4 col-md-6 text-center berry">
                                 <div class="single-product-item">
                                     <div class="product-image">
-                                        <a href="producto2.html">
+                                        <a href="{{ url('/product/' . $product->id) }}">
                                             <img src="{{ asset('storage') .'/'. $product->image}}" alt="">
                                         </a>
                                     </div>
                                     <h3>{{$product->name}}</h3>
                                     <p class="product-price">
-                                        <span>{{$product->description}}</span>
-                                        {{$product->price}}
+                                        <span>{{$product->shortDescription}}</span>
+                                        $ {{number_format($product->price, 0, ',', '.')}}
                                     </p>
-                                    <a href="cart.html" class="cart-btn">
+                                    <a href="{{ url('/addProduct/'.$product->id) }}" class="cart-btn">
                                         <i class="fas fa-shopping-cart"></i>
                                         Añadir al carrito
                                     </a>
@@ -84,16 +84,16 @@
                             <div class="col-lg-4 col-md-6 text-center lemon">
                                 <div class="single-product-item">
                                     <div class="product-image">
-                                        <a href="producto2.html">
+                                        <a href="{{ url('/product/' . $product->id) }}">
                                             <img src="{{ asset('storage') .'/'. $product->image}}" alt="">
                                         </a>
                                     </div>
                                     <h3>{{$product->name}}</h3>
                                     <p class="product-price">
-                                        <span>{{$product->description}}</span>
-                                        {{$product->price}}
+                                        <span>{{$product->shortDescription}}</span>
+                                        $ {{number_format($product->price, 0, ',', '.')}}
                                     </p>
-                                    <a href="cart.html" class="cart-btn">
+                                    <a href="{{ url('/addProduct/'.$product->id) }}" class="cart-btn">
                                         <i class="fas fa-shopping-cart"></i>
                                         Añadir al carrito
                                     </a>

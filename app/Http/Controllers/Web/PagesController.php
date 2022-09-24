@@ -3,11 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\EmailRequest;
-use App\Mail\SendMailable;
 use App\Models\Product;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Http\RedirectResponse;
 
 class PagesController extends Controller
 {
@@ -32,11 +28,6 @@ class PagesController extends Controller
     {
         $data['products'] = Product::all();
         return view('components.pages.shop', $data);
-    }
-
-    public function cart()
-    {
-        return 'cart';
     }
 
 }

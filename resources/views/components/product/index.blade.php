@@ -2,18 +2,11 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container-fluid">
 
-        <h2 class="text-center mb-4 font-weight-bolder" style="font-family: 'Arial Rounded MT Bold', sans-serif">Gestión de Productos</h2>
-
-        @if(\Illuminate\Support\Facades\Session::has('message'))
-
-            <div class="alert alert-primary fade in alert-dismissible show">
-                {{\Illuminate\Support\Facades\Session::get('message')}}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-
-        @endif
+        <h2 class="text-center mb-4 font-weight-bolder" style="font-family: 'Arial Rounded MT Bold', sans-serif">
+            Gestión de Productos
+        </h2>
 
         <a href="{{url('product/create')}}" class="btn btn-success">Registrar nuevo producto</a>
 
@@ -26,7 +19,9 @@
                 <tr style="border-color: black">
                     <th>ID</th>
                     <th>Nombre</th>
+                    <th>Desc. corta</th>
                     <th>Descripción</th>
+                    <th>Modo de uso</th>
                     <th>Precio</th>
                     <th>Stock</th>
                     <th>Imagen</th>
@@ -43,8 +38,10 @@
                     <tr>
                         <td>{{$product->id}}</td>
                         <td>{{$product->name}}</td>
-                        <td>{{$product->description}}</td>
-                        <td>{{$product->price}}</td>
+                        <td>{{$product->shortDescription}}</td>
+                        <td style="width: 250px;">{{$product->description}}</td>
+                        <td style="width: 150px;">{{$product->howToUse}}</td>
+                        <td>$ {{number_format($product->price, 0, ',', '.')}}</td>
                         <td>{{$product->stockAmount}}</td>
 
                         <td>

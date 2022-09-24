@@ -20,9 +20,21 @@
 </div>
 
 <div class="form-group mt-3">
+    <label for="shortDescription">Descripción corta</label>
+    <input type="text" class="form-control" name="shortDescription"
+           value="{{isset($product->shortDescription)?$product->shortDescription:old('shortDescription')}}">
+</div>
+
+<div class="form-group mt-3">
     <label for="description">Descripción</label>
     <input type="text" class="form-control" name="description"
            value="{{isset($product->description)?$product->description:old('description')}}">
+</div>
+
+<div class="form-group mt-3">
+    <label for="howToUse">Modo de uso</label>
+    <input type="text" class="form-control" name="howToUse"
+           value="{{isset($product->howToUse)?$product->howToUse:old('howToUse')}}">
 </div>
 
 <div class="form-group mt-3">

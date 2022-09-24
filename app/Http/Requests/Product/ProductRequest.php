@@ -16,9 +16,11 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
+            'shortDescription' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string', 'max:255'],
+            'howToUse' => ['required', 'string', 'max:255'],
             'price' => ['required', 'numeric', 'min:1000', 'max:1000000000'],
-            'stockAmount' => ['required', 'numeric', 'min:1', 'max:500'],
+            'stockAmount' => ['required', 'numeric', 'min:0', 'max:500'],
             'image' => ['required', 'max:10000', 'mimes:jpeg,png,jpg'],
             'category_id' => ['required', 'numeric']
         ];

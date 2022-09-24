@@ -36,7 +36,7 @@
                         </li>
 
                         <li>
-                            <a href="ttps://www.facebook.com/profile.php?id=100085936891712" target="_blank">
+                            <a href="https://www.facebook.com/profile.php?id=100085936891712" target="_blank">
                                 <i class="fab fa-facebook-f"></i>
                                 <u>Vida Sana</u></a>
                         </li>

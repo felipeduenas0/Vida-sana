@@ -34,9 +34,9 @@
                                 un periodo de mediano a largo plazo, generan efectos positivos sobre nuestra salud
                                 mental,
                                 física, nutricional y social.</p>
-                            <p>1. Dieta saludable: La primera clave es una alimentacion variada y equilibrada. Resalta
+                            <p>1. Dieta saludable: La primera clave es una alimentación variada y equilibrada. Resalta
                                 la
-                                impotancia de las frutas, verduras, cereales integrales, proteínas como mariscos, carne,
+                                importancia de las frutas, verduras, cereales integrales, proteínas como mariscos, carne,
                                 huevo, nueces y semillas. También debemos conocer el contenido de nutrientes de los
                                 alimentos para analizar si la dieta es adecuada, estos son: Hidratos de carbono,
                                 lípidos,

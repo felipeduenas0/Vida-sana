@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Dowload</title>
+    <title>Descarga</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
@@ -29,41 +29,27 @@
 <div class="container-fluid">
 
     <div class="container-fluid mt-3">
-        <h4 style="font-weight: bolder;">RECIBO DE PAGO - Y2K</h4>
+        <h4 style="font-weight: bolder;">RECIBO DE PAGO</h4>
         <br>
     </div>
 
     <div class="container-fluid mt-3">
-        <h5 style="font-weight: bolder;">Modalidad de pago: <span style="font-weight: normal;">Los pagos se realizan mediante consignación bancaria.</span>
+        <h5 style="font-weight: bolder;">Responsable directo: <span
+                style="font-weight: normal;">VIDA SANA</span>
         </h5>
         <br>
-
-        <h5 style="font-weight: bolder;">Entidad: <span style="font-weight: normal;">Bancolombia</span>
-        </h5>
-        <br>
-
-        <h5 style="font-weight: bolder;">N° cuenta: <span
-                style="font-weight: normal;">100738982423</span></h5>
-        <br>
-
-        <h5 style="font-weight: bolder;">Responsables: <span
-                style="font-weight: normal;">Angelica, Michell & Juan.</span>
-        </h5>
-        <br>
-
     </div>
 
     <div class="container-fluid">
 
-        <h5 class="mt-2" style="font-weight: bolder;">Listado de productos a comprar</h5>
+        <h5 class="mt-2" style="font-weight: bolder;">Lista de productos adquiridos</h5>
 
         <table class="table table-striped mb-0 mt-3"
-               style="width: 100%; border-style: solid; border-width: 2px; border-color: black">
+               style="width: 100%; border-style: solid; border-width: 2px; border-color: #68aca4">
 
             <thead class="text-center">
             <tr>
-                <th scope="col">Producto</th>
-                <th scope="col">Descripción</th>
+                <th scope="col">Nombre</th>
                 <th scope="col">Precio unitario</th>
                 <th scope="col">Cantidad</th>
                 <th scope="col">Sub-Total</th>
@@ -75,7 +61,6 @@
 
                 <tr>
                     <td>{{$product->name}}</td>
-                    <td>{{$product->description}}</td>
                     <td>${{number_format( $product->price, 0, ',', '.')}}</td>
                     <td>{{$product->stockAmount}}</td>
                     <td>${{number_format(($product->price * $product->stockAmount) , 0, ',', '.')}}</td>
@@ -83,20 +68,13 @@
 
             @endforeach
 
-
         </table>
 
         <br>
 
         <h4 class="fw-bolder text-end">Total: ${{number_format($total, 0, ',', '.')}}</h4>
 
-        <hr class="bg-dark">
-
-        <div class="container-fluid mt-3">
-            <P>Cualquier duda comunicarse al siguiente número: +57 3107156819</P>
-        </div>
-
-        <hr class="bg-dark">
+        <hr class="bg-info">
 
     </div>
 

@@ -137,7 +137,7 @@
                     <div class="contact-form-wrap">
                         <div class="contact-form-box">
                             <h4><i class="fas fa-address-book"></i> Aquí podrás...</h4>
-                            <p>Contactarnos para alguna consulta o simplemente para dejar un comentario. Escribenos en
+                            <p>Contactarnos para alguna consulta o simplemente para dejar un comentario. Escríbenos en
                                 el siguiente formulario.</p>
                         </div>
                     </div>

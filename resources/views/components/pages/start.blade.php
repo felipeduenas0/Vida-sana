@@ -100,17 +100,21 @@
                         <div class="col-lg-4 col-md-6 text-center">
                             <div class="single-product-item">
                                 <div class="product-image">
-                                    <a href="producto1.html">
+
+                                    <a href="{{ url('/product/' . $products[$i]['id']) }}">
                                         <img src="{{ asset('storage') .'/'. $products[$i]['image'] }}" alt="">
                                     </a>
+
                                 </div>
                                 <h3>{{ $products[$i]['name'] }}</h3>
                                 <p class="product-price">
-                                    <span>{{ $products[$i]['description'] }}</span>
-                                    $ {{$products[$i]['price']}}
+                                    <span>{{ $products[$i]['shortDescription'] }}</span>
+                                    $ {{   number_format($products[$i]['price'], 0, ',', '.')}}
                                 </p>
-                                <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Añadir al
-                                    carrito</a>
+                                <a href="{{ url('/addProduct/'.$products[$i]['id']  ) }}" class="cart-btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Añadir al carrito
+                                </a>
                             </div>
                         </div>
                     @endif
@@ -147,7 +151,7 @@
                         <div class="text">Es una alternativa nutritiva, contiene vitaminas, calcio y proteínas. No eleva
                             el
                             azúcar en la sangre y es libre de lácteos, así ayuda a reducir riesgos en la salud,
-                            adicionandola a una dieta saludable.<br>Anímate a probarla y conocer sus diferentes usos.
+                            adicionándola a una dieta saludable.<br>Anímate a probarla y conocer sus diferentes usos.
                         </div>
                     </div>
 

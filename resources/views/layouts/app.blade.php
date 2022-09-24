@@ -16,7 +16,7 @@
     <link rel="shortcut icon" type="image/png" href="{{ asset('favicon.png') }}">
 
     <!-- Title -->
-    <title>Inicio</title>
+    <title>Administrador</title>
 
     <!-- fontawesome -->
     <link rel="stylesheet" href="{{ asset('css/all.min.css') }} ">
@@ -42,6 +42,9 @@
 <main style="padding-top: 3rem;">
     @yield('content')
 </main>
+
+<!-- SWEETALERT -->
+@include('sweetalert::alert')
 
 <!-- jquery -->
 <script src="{{ asset('js/jquery-1.11.3.min.js') }}"></script>

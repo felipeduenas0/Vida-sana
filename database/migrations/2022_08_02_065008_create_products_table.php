@@ -12,7 +12,9 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('shortDescription');
             $table->string('description');
+            $table->string('howToUse');
             $table->decimal('price', 15, 0);
             $table->integer('stockAmount');
             $table->string('image');
