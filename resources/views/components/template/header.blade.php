@@ -42,9 +42,7 @@
                                 <a href="{{ url('/cart') }}">Carrito</a>
                             </li>
 
-                            <li>
-                                <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-                            </li>
+                            <li></li>
 
                         </ul>
 
@@ -53,6 +51,7 @@
                     <a class="mobile-show search-bar-icon" href="#">
                         <i class="fas fa-search"></i>
                     </a>
+
 
                     <div class="mobile-menu"></div>
                     <!-- menu end -->

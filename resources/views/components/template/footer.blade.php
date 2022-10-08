@@ -96,7 +96,7 @@
                     <ul>
 
                         <li>
-                            <a href="/">Tratamiento de datos</a>
+                            <a href="{{ url('/shippingPolicies') }}">Políticas de envío</a>
                         </li>
 
                     </ul>

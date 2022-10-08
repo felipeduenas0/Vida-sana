@@ -40,6 +40,43 @@
         <br>
     </div>
 
+    <div class="container-fluid mt-3">
+        <h5 style="font-weight: bolder;">-Cuenta de ahorros Bancolombia: <span
+                style="font-weight: normal;">35819350343</span>
+        </h5>
+        <br>
+    </div>
+
+    <div class="container-fluid mt-3">
+        <h5 style="font-weight: bolder;">-Nequi: <span
+                style="font-weight: normal;">3223295825</span>
+        </h5>
+        <br>
+    </div>
+
+    <div class="container-fluid mt-3">
+        <h5 style="font-weight: bolder;">-Efecty: <span
+                style="font-weight: normal;">C.C. 46384714 Claudia Arguello (Usted debe asumir el costo adicional)</span>
+        </h5>
+        <br>
+    </div>
+
+    <div class="container-fluid mt-3">
+        <h5 style="font-weight: normal">
+            Por favor envíe el comprobante de pago al siguiente Whatsapp: 3123303761 junto con sus datos de envío, de lo
+            contrario su pedido no será despachado. Debe pagar el envío al recibir el pedido.
+            Recomendamos revisar las políticas de envío alojadas en el pie de página.
+        </h5>
+        <br>
+    </div>
+
+    <div class="container-fluid mt-3">
+        <h5 style="font-weight: bolder;">DATOS: <span
+                style="font-weight: normal;">Nombre, cédula de ciudadanía, número de teléfono, ciudad y departamento, dirección completa.</span>
+        </h5>
+        <br>
+    </div>
+
     <div class="container-fluid">
 
         <h5 class="mt-2" style="font-weight: bolder;">Lista de productos adquiridos</h5>
@@ -73,9 +110,7 @@
         <br>
 
         <h4 class="fw-bolder text-end">Total: ${{number_format($total, 0, ',', '.')}}</h4>
-
         <hr class="bg-info">
-
     </div>
 
 </div>

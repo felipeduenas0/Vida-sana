@@ -30,4 +30,9 @@ class PagesController extends Controller
         return view('components.pages.shop', $data);
     }
 
+    public function policies()
+    {
+        return view('components.pages.policies');
+    }
+
 }

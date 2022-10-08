@@ -24,7 +24,7 @@
                 <div class="col-lg-8">
                     <div class="single-article-section">
                         <div class="single-article-text">
-                            <div class="single-artcile-bg"></div>
+                            <div class="single-artcile-bg fibras-bg"></div>
                             <p class="blog-meta">
                                 <span class="author"><i class="fas fa-user"></i> Admin</span>
                                 <span class="date"><i class="fas fa-calendar"></i> 02 Agosto, 2022</span>

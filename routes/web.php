@@ -11,6 +11,7 @@ Route::get('/', [PagesController::class, 'start'])->name('start');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
 Route::get('/news', [PagesController::class, 'news'])->name('news');
 Route::get('/shop', [PagesController::class, 'shop'])->name('shop');
+Route::get('/shippingPolicies', [PagesController::class, 'policies'])->name('/shippingPolicies');
 
 // Blogs
 Route::get('/single-news', [NewsController::class, 'singleNews'])->name('single-news');
@@ -33,3 +34,8 @@ Route::get('/product/edit/{product}', [ProductController::class, 'edit']);
 Route::patch('/product/update/{product}', [ProductController::class, 'update']);
 Route::delete('/product/destroy/{product}', [ProductController::class, 'destroy']);
 Route::get('/product/{product}', [ProductController::class, 'show']);
+
+/* Ruta para crear enlace simbolico en el servidor */
+Route::get('link', function () {
+    Artisan::call('storage:link');
+});

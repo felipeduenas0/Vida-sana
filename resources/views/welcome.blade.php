@@ -55,6 +55,7 @@
 @yield('news')
 @yield('shop')
 @yield('cart')
+@yield('policies')
 
 <!-- BLOGS -->
 @yield('single-news')

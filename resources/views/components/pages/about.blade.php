@@ -44,7 +44,8 @@
                                     <div class="content">
                                         <h3>Contacto</h3>
                                         <p>Claudia Arguello<br><b>Email:</b> vidasana832@gmail.com <br> <b>Teléfono:</b>
-                                            <a href="https://wa.pe/vidasana" target="_blank"> 3053777727</a>
+                                            <a href="https://wa.pe/vidasana" target="_blank" style="color: black;">
+                                                3053777727</a>
                                     </div>
                                 </div>
                             </div>
@@ -55,10 +56,12 @@
                                     </div>
                                     <div class="content">
                                         <h3>Redes sociales</h3>
-                                        <p><a href="https://www.instagram.com/tiendan_vidasana/" target="_blank"><i
+                                        <p><a href="https://www.instagram.com/tiendan_vidasana/" target="_blank"
+                                              style="color: black"><i
                                                     class="fab fa-instagram"></i> tiendan_vidasana</a><br><a
                                                 href="https://www.facebook.com/profile.php?id=100085936891712"
-                                                target="_blank"><i class="fab fa-facebook-f"></i> Vida Sana</a></p>
+                                                target="_blank" style="color: black"><i class="fab fa-facebook-f"></i>
+                                                Vida Sana</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -107,32 +110,24 @@
         </div>
     </div>
     <!-- end propositos -->
-    <!-- buzon -->
+
     <div class="contact-from-section mt-150 mb-150">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
+
                     <div class="form-title">
                         <h2>Buzón de sugerencias</h2>
                     </div>
+
                     <div id="form_status"></div>
                     <div class="contact-form">
-                        <form type="POST" id="fruitkha-contact" onSubmit="return valid_datas( this );">
-                            <p>
-                                <input type="text" placeholder="Name" name="name" id="name">
-                                <input type="email" placeholder="Email" name="email" id="email">
-                            </p>
-                            <p>
-                                <input type="tel" placeholder="Phone" name="phone" id="phone">
-                                <input type="text" placeholder="Subject" name="subject" id="subject">
-                            </p>
-                            <p><textarea name="message" id="message" cols="30" rows="10"
-                                         placeholder="Message"></textarea></p>
-                            <input type="hidden" name="token" value="FsWga4&@f6aw"/>
-                            <p><input type="submit" value="Enviar"></p>
-                        </form>
+                        <iframe frameborder="0" style="height:500px;width:99%;border:none;"
+                                src='https://forms.zohopublic.com/vidasana832/form/ContactUs/formperma/Ggdh4sXbB1LvXrpa_JIKG0gNPAnbROfZgLfXlsXH2cU'></iframe>
                     </div>
+
                 </div>
+
                 <div class="col-lg-4">
                     <div class="contact-form-wrap">
                         <div class="contact-form-box">
@@ -142,8 +137,10 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
+
     <!-- end contacto -->
 @endsection
